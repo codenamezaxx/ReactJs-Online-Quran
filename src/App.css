@@ -1,0 +1,217 @@
+@font-face {
+  font-family: "noorehidayat";
+  src: url("components/Fonts/noorehidayat.ttf") format("ttf");
+}
+* {
+  transition: all 0.4s;
+}
+body {
+  background-color: #1b1b1b;
+}
+
+.App {
+  z-index: 10;
+  max-width: 728px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  min-height: 100vh;
+  background-color: #171a1f;
+}
+
+.App header {
+  background-color: #005043;
+  height: 12vh;
+  min-height: 50px;
+  color: white;
+  position: relative;
+  width: 100%;
+  max-width: 728px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: space-between;
+  z-index: 99;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.App footer {
+  height: 10vh;
+  color: white;
+  width: 100%;
+  max-width: 728px;
+  display: flex;
+  align-items: center;
+  align-content: center;
+}
+
+main {
+  padding: 10px;
+  height: 80vh;
+  margin: 10vh 0 10vh;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+}
+
+main::-webkit-scrollbar {
+  width: 0.25rem;
+}
+
+main::-webkit-scrollbar-track {
+  background: #1e1e24;
+}
+
+main::-webkit-scrollbar-thumb {
+  background: #2084d5;
+}
+
+div #surah-list {
+  border-radius: 0%;
+  padding-top: 1px;
+  padding-bottom: 10px;
+  margin: 10px;
+  background-color: #22272e;
+}
+
+div #surah-list:hover {
+  padding-top: 5px;
+  padding-bottom: 10px;
+  cursor: pointer;
+  transition: all 0.4s;
+}
+
+form {
+  border-radius: 20px;
+  background-color: rgb(24, 23, 23);
+  width: 100%;
+  max-width: 300px;
+  display: flex;
+  font-size: 1.5rem;
+}
+
+form button {
+  width: 20%;
+  border-radius: 0px;
+  background-color: #13c196;
+}
+
+input {
+  line-height: 1.7;
+  width: 100%;
+  font-size: 1.1rem;
+  background: rgb(230, 230, 230);
+  color: #5c5b64;
+  padding-left: 10px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+}
+
+button {
+  border: none;
+  margin-left: 25px;
+  background-color: #13c196; /* Green */
+  border-radius: 5px;
+  padding: 8px;
+  color: rgb(32, 32, 32);
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+button:hover {
+  background-color: #0f8b6c;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+h2 {
+  color: white;
+  font-size: 2.5rem;
+  margin-bottom: 80px;
+}
+
+h3 {
+  color: white;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+ul,
+li {
+  text-align: left;
+  list-style: none;
+}
+
+p {
+  line-height: 14px;
+  padding: 10px 20px;
+  border-radius: 25px;
+  position: relative;
+  color: white;
+}
+
+a {
+  color: #17e7b3;
+}
+
+img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin: 2px 5px;
+}
+
+footer {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+div .verses{
+  border-radius: 10px;
+  margin: 15px;
+  padding: 1.5%;
+  line-height: 25px;
+  background-color: #22272e;
+}
+
+div .text {
+  margin-bottom: 5%;
+  text-align: right;
+  font-family: "noorehidayat";
+}
+
+div .surahName {
+  line-height: 30pt;
+  font-size: 30pt;
+  margin: 20px;
+  text-align: center;
+  font-family: "noorehidayat";
+}
+
+p #arab {
+  font-size: 17pt;
+  line-height: 200%;
+  margin-bottom: 2px;
+}
+
+span .endOfAyah {
+  float: left;
+  width: 12px;
+  height: 17px;
+  position: relative;
+}
+
+span.versesNumber {
+  position: relative;
+  right: 22px;
+}
