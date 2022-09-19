@@ -1,20 +1,21 @@
 import React, { PureComponent } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
+import banner from "../alquranul-karim.svg";
+import WebRouter from "./Router";
 
 const api = "https://react-quran-api.vercel.app";
 
 class SurahList extends PureComponent {
-  // Constructor
   constructor(props) {
     super(props);
 
     this.state = {
       data: [],
+      surahNumber: null,
     };
   }
 
-  // ComponentDidMount is used to
-  // execute the code
   componentDidMount() {
     axios.get(api + "/surah").then((res) => {
       this.setState({
@@ -22,28 +23,51 @@ class SurahList extends PureComponent {
       });
     });
   }
+
   render() {
+    const openSurah = (number) => {
+      this.setState({
+        surahNumber: number,
+      });
+      <WebRouter surahNumber={number} />;
+    };
     return (
       <div className="SurahList">
+        <div className="banner">
+          <img src={banner} id="alquranul-karim" alt="Banner" />
+        </div>
         <h3>Daftar Surat</h3>
-        <div>
+        <div className="bodyList">
           {this.state.data.map((data) => (
             <div id="surah-list">
-              <p>
-                {" "}
-                {" " + data.number + "   | "}
-                <a href={"/surah/" + data.number}>
+              <span id="numberOfSurah">
+                <b>{data.number}</b>
+              </span>
+              <p id="nameOfSurah">
+                <a
+                  href={"/surah/" + data.number}
+                  onClick={openSurah(data.number)}
+                >
                   {data.name.transliteration.id + " "}
                 </a>
+                <br />
                 {"(" + data.name.translation.id + ")"}
-                {" | " + data.numberOfVerses + " Ayat | "}
+              </p>
+              <p id="surahInfo">
+                {data.numberOfVerses + " Ayat"}
+                <br />
                 {data.revelation.id}
               </p>
-              <a href={"/surah/" + data.number}>
-              <button>Open</button>
-              </a>
-              <button>Play</button>
-              <button>Tafsir</button>
+              <span id="surahButtons">
+                <Link
+                  to={"/surah/" + data.number}
+                  onClick={openSurah(data.number)}
+                >
+                  <button id="surahButton">Open</button>
+                </Link>
+                <button id="surahButton">Play</button>
+                <button id="surahButton">Tafsir</button>
+              </span>
             </div>
           ))}
         </div>

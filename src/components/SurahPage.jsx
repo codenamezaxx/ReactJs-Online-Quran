@@ -12,12 +12,13 @@ class SurahPage extends PureComponent {
       data: [],
       verses: [],
       surahName: [],
+      surahNumber: props.surahNumber,
       //surahTransliteration: [],
     };
   }
 
   componentDidMount() {
-    axios.get(api + "/surah/1").then((res) => {
+    axios.get(api + this.state.surahNumber).then((res) => {
       this.setState({
         code: res.data.code,
         data: res.data.data,
@@ -50,8 +51,10 @@ class SurahPage extends PureComponent {
                 {verses.text.transliteration.en}
                 <br />
               </div>
-              {verses.number.inSurah + ". "}
-              {verses.translation.id}
+              <div id="translation">
+                <p>{verses.number.inSurah + ". "}</p>
+                <p id="idText">{verses.translation.id}</p>
+              </div>
             </div>
           ))}
         </p>
