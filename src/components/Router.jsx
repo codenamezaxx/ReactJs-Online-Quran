@@ -6,12 +6,19 @@ import SurahPage from "./SurahPage";
 const pathname = window.location.pathname;
 
 class WebRouter extends PureComponent {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+    };
+  }
+
   render() {
     return (
       <div>
         <BrowserRouter>
           <Routes>
-            <Route exact path="/" element={<SurahList />} />
+            <Route exact path="/" element={<SurahList query={this.props.query}/>} />
             <Route
               exact
               path={"/surah/:surahNumber"}
