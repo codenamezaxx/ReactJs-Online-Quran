@@ -1,5 +1,9 @@
 import React, { PureComponent } from "react";
 import axios from "axios";
+import { useState } from "react";
+import Loading from "./Loading";
+import Footer from "./Footer";
+import Header from "./Header";
 
 const api = "https://react-quran-api.vercel.app";
 
@@ -8,12 +12,14 @@ class SurahPage extends PureComponent {
     super(props);
 
     this.state = {
+      loading: true,
+      basmalah: false,
       code: null,
       data: [],
       verses: [],
       surahName: [],
       surahNumber: props.surahNumber,
-      //surahTransliteration: [],
+      surahTransliteration: "",
     };
   }
 
@@ -24,41 +30,67 @@ class SurahPage extends PureComponent {
         data: res.data.data,
         verses: res.data.data.verses,
         surahName: res.data.data.name,
-        //surahTransliteration: res.data.data.name.transliteration,
+        loading: false,
+        surahTransliteration: res.data.data.name.transliteration.id,
       });
     });
   }
 
+  Basmalah() {
+    if (this.state.data.number === 1 || this.state.data.number === 9) {
+      this.setState({ basmalah: false });
+    } else {
+      this.setState({ basmalah: true });
+    }
+  }
+
   render() {
     return (
-      <div className="SurahPage">
-        <p>
-          <div className="surahName">{this.state.surahName.long}</div>
-          <br />
-          {this.state.verses.map((verses) => (
-            <div className="verses">
-              <div className="text">
-                <p id="arab">
-                  {verses.text.arab}
-                  <span className="endOfAyah">
-                    <span className="symbol">{"۝"}</span>
-                    <span className="versesNumber">
-                      {verses.number.inSurah}
-                    </span>
+      <>
+        {this.state.loading ? (
+          <loader>
+            <Loading />
+          </loader>
+        ) : (
+          <div className="SurahPage">
+            <Header />
+            <p>
+              <div className="surahName">
+                <p id="arab">{this.state.surahName.long}</p>
+                <br />
+                <p id="translation">{this.state.surahTransliteration}</p>
+              </div>
+              {this.Basmalah()}
+              {this.state.basmalah ? (
+                <div className="basmalah">
+                  <p id="arab">بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ</p>
+                  <p id="translation">
+                    Dengan nama Allah Yang Maha Pengasih, Maha Penyayang.
+                  </p>
+                </div>
+              ) : (
+                <></>
+              )}
+              {this.state.verses.map((verses) => (
+                <div className="verses">
+                  <span className="versesNumber">
+                    {this.state.data.number + " : " + verses.number.inSurah}
                   </span>
-                </p>
-                <br />
-                {verses.text.transliteration.en}
-                <br />
-              </div>
-              <div id="translation">
-                <p>{verses.number.inSurah + ". "}</p>
-                <p id="idText">{verses.translation.id}</p>
-              </div>
-            </div>
-          ))}
-        </p>
-      </div>
+                  <div className="text">
+                    <p id="arab">{verses.text.arab}</p>
+                    <br />
+                  </div>
+                  <div id="translation">
+                    <p id="idText">{verses.translation.id}</p>
+                  </div>
+                </div>
+              ))}
+            </p>
+            <br /><hr />
+            <Footer />
+          </div>
+        )}
+      </>
     );
   }
 }

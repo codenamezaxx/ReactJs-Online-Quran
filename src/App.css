@@ -1,7 +1,6 @@
 @font-face {
-  font-family: "noorehidayat";
-  src: url("./components/Fonts/noorehidayat-webfont.woff2") format("woff2"),
-    url("./components/Fonts/noorehidayat-webfont.woff") format("woff");
+  font-family: "LPMQ";
+  src: url("./components/Fonts/LPMQ.ttf");
 }
 
 body {
@@ -40,6 +39,12 @@ body {
   display: block;
   color: white;
   width: 100%;
+}
+
+.App loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 main {
@@ -97,10 +102,10 @@ div #surah-list {
   line-height: 130%;
   border-radius: 10px;
   height: max-content;
-  min-width: 150px;
-  width: 15vmax;
+  min-width: 160px;
+  width: 15vw;
   padding: 1.2vw;
-  margin: 2.5vw;
+  margin: 3%;
   background-color: #22272e;
   font-size: 1rem;
 }
@@ -114,6 +119,7 @@ div #surah-list:hover {
 #nameOfSurah {
   font-weight: bold;
   text-align: center;
+  text-decoration: none;
 }
 
 #translationName {
@@ -128,6 +134,7 @@ div #surah-list:hover {
 #surahInfo {
   text-align: center;
   font-weight: normal;
+  font-size: 0.85rem;
 }
 
 #numberOfSurah {
@@ -172,8 +179,9 @@ div #surah-list:hover {
 input {
   margin: 10px;
   line-height: 1.7;
-  height: 35px;
-  width: 30%;
+  height: 40px;
+  width: 55vw;
+  max-width: 520px;
   font-size: 0.8rem;
   background: rgb(230, 230, 230);
   color: #5c5b64;
@@ -238,6 +246,30 @@ img {
   margin: 2px 5px;
 }
 
+.basmalah {
+  align-items: center;
+  justify-content: center;
+  max-height: max-content;
+  border-radius: 10px;
+  margin: 1%;
+  padding: 5%;
+  padding-bottom: 2%;
+  line-height: 100%;
+  background-color: #1e2329;
+}
+
+.basmalah #arab{
+  position: relative;
+  bottom: 20px;
+  line-height: 100%;
+  font-size: 2.2rem;
+  text-align: center;
+}
+
+.basmalah #translation {
+  text-align: center;
+}
+
 .verses {
   max-height: max-content;
   font-size: 1.5rem;
@@ -246,25 +278,32 @@ img {
   padding: 5%;
   padding-bottom: 2%;
   line-height: 100%;
-  background-color: #22272e;
+  background-color: #1e2329;
 }
 
 .text {
   font-size: 2vh;
   margin-bottom: 5%;
   text-align: right;
-  font-family: "noorehidayat";
+  font-family: "LPMQ";
 }
 
-.surahName {
-  font-size: 8vh;
-  margin: 6px;
+.surahName #arab {
+  margin-top: 5px;
+  font-size: 3.5em;
   text-align: center;
-  font-family: "noorehidayat";
+  font-family: "LPMQ";
+}
+
+.surahName #translation {
+  margin-top: 0;
+  font-size: 1.5em;
+  text-align: center;
+  font-weight: bold;
 }
 
 p #arab {
-  font-family: "noorehidayat";
+  font-family: "LPMQ";
   font-size: 4vh;
   line-height: 200%;
   margin-bottom: 2px;
@@ -278,16 +317,16 @@ span .endOfAyah{
 }
 
 .versesNumber {
-  position: relative;
-  font-size: 3.3vh;
-  right: 3vh;
+  background-color: #1c1c22;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 2vh;
   text-align: center;
 }
 
 #translation {
-  display: flex;
   line-height: 120%;
-  font-size: 2vh;
+  font-size: 0.8rem;
 }
 
 #idText {

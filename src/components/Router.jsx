@@ -18,7 +18,7 @@ class WebRouter extends PureComponent {
       <div>
         <BrowserRouter>
           <Routes>
-            <Route exact path="/" element={<SurahList query={this.props.query}/>} />
+            <Route exact path="/" element={<SurahList />} />
             <Route
               exact
               path={"/surah/:surahNumber"}
