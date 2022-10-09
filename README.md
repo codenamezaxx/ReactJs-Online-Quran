@@ -1,3 +1,5 @@
+![](https://api.checklyhq.com/v1/badges/checks/393faa75-c1b4-46ce-be70-90c6d6c7565e?style=flat&theme=default&responseTime=true)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
