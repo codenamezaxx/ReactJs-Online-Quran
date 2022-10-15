@@ -1,10 +1,3 @@
-<<<<<<< HEAD
-=======
-![](https://api.checklyhq.com/v1/badges/checks/393faa75-c1b4-46ce-be70-90c6d6c7565e?style=flat&theme=default&responseTime=true)
-
-# Getting Started with Create React App
->>>>>>> 2c737ebf0699f22e35b8f2a400ad9596a2519b06
-
 # React js Quran
 
 Online Quran WebApp using Reactjs and Quran API
