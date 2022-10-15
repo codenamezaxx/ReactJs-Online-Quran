@@ -1,14 +1,18 @@
 import React from "react";
+import vercel from "./svg/powered-by-vercel.svg";
 
 const Footer = () => {
   return (
-    <footer>
-      <div className="footer">
-        <h1>Online Quran</h1>
-        <p>
-          by <a href="https://lynk.id/codenamezaxx">Zaxx</a> 2022
-        </p>
-      </div>
+    <footer className="w3-container w3-border-teal w3-border-top">
+      <h1>Quran Js</h1>
+      <p>
+        created by{" "}
+        <a href="https://lynk.id/codenamezaxx" className="w3-text-teal">
+          Zaxx
+        </a>{" "}
+        2022
+      </p>
+      <img src={vercel} id="powered-by-vercel"/>
     </footer>
   );
 };

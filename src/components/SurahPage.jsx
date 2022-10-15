@@ -1,6 +1,5 @@
 import React, { PureComponent } from "react";
 import axios from "axios";
-import { useState } from "react";
 import Loading from "./Loading";
 import Footer from "./Footer";
 import Header from "./Header";
@@ -58,11 +57,11 @@ class SurahPage extends PureComponent {
               <div className="surahName">
                 <p id="arab">{this.state.surahName.long}</p>
                 <br />
-                <p id="translation">{this.state.surahTransliteration}</p>
+                <p id="translation">Surah {this.state.surahTransliteration}</p>
               </div>
               {this.Basmalah()}
               {this.state.basmalah ? (
-                <div className="basmalah">
+                <div className="basmalah w3-border-top w3-border-teal">
                   <p id="arab">بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ</p>
                   <p id="translation">
                     Dengan nama Allah Yang Maha Pengasih, Maha Penyayang.
@@ -72,10 +71,20 @@ class SurahPage extends PureComponent {
                 <></>
               )}
               {this.state.verses.map((verses) => (
-                <div className="verses">
-                  <span className="versesNumber">
-                    {this.state.data.number + " : " + verses.number.inSurah}
-                  </span>
+                <div className="verses w3-border-top w3-border-teal">
+                  <div className="action-container">
+                    <span className="versesNumber">
+                      {this.state.data.number + " : " + verses.number.inSurah}
+                    </span>
+                    <div class="tafsir-button w3-dropdown-hover w3-green">
+                      <button class="tafsir-button w3-button w3-green">Tafsir</button>
+                      <div class="tafsir w3-padding w3-dropdown-content w3-border w3-green w3-round">
+                        <p className="tafsir-text">
+                          {verses.tafsir.id.short}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
                   <div className="text">
                     <p id="arab">{verses.text.arab}</p>
                     <br />
@@ -86,7 +95,7 @@ class SurahPage extends PureComponent {
                 </div>
               ))}
             </p>
-            <br /><hr />
+            <br />
             <Footer />
           </div>
         )}

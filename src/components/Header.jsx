@@ -5,7 +5,7 @@ const Header = () => {
     <header>
       <a className="title" href="/">
         <span>
-          <h1>Online Quran</h1>
+          <h1>Quran Js</h1>
         </span>
       </a>
     </header>

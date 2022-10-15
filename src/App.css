@@ -19,9 +19,9 @@ body {
 }
 
 .App header {
-  font-size: 1rem;
+  font-size: 0.8rem;
   background-color: #005043;
-  height: 12vh;
+  height: 10.5vh;
   min-height: 50px;
   color: white;
   position: relative;
@@ -36,6 +36,7 @@ body {
 }
 
 .App footer {
+  text-align: center;
   display: block;
   color: white;
   width: 100%;
@@ -56,31 +57,6 @@ main {
   flex-direction: column;
 }
 
-main::-webkit-scrollbar {
-  width: 0.25rem;
-}
-
-main::-webkit-scrollbar-track {
-  background: #1e1e24;
-}
-
-main::-webkit-scrollbar-thumb {
-  background: #2084d5;
-}
-
-.title {
-  color: whitesmoke;
-  text-decoration: none;
-}
-
-.listBox {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  align-self: center;
-  align-content: center;
-}
-
 .banner {
   margin: 10px;
   display: flex;
@@ -91,54 +67,100 @@ main::-webkit-scrollbar-thumb {
 #alquranul-karim {
   margin: 10px;
   filter: invert();
-  width: 90vw;
-  height: 20vh;
+  width: 400px;
+  height: 150px;
+}
+
+.title {
+  color: whitesmoke;
+  text-decoration: none;
+}
+
+.list-container {
+  max-width: 1140px;
+}
+
+.listBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  align-content: center;
+}
+
+.bodyList {
+  max-width: 1107px;
+}
+
+#sort-by {
+  border: none;
+  border-radius: 5px;
+  width: 100px;
+  height: 40px;
+  padding: 5px;
+  color: white;
+  cursor: pointer;
+  background-color: #005043;
+}
+
+option{
+  background-color: #084939;
 }
 
 div #surah-list {
-  display: inline-table;
-  justify-content: center;
+  font-family: Arial, Helvetica, sans-serif;
+  display: inline-flex;
   align-items: center;
-  line-height: 130%;
+  justify-content: right;
   border-radius: 10px;
-  height: max-content;
-  min-width: 160px;
-  width: 15vw;
-  padding: 1.2vw;
-  margin: 3%;
-  background-color: #22272e;
+  min-width: 280px;
+  height: 70px;
+  width: 25vw;
+  padding: 1%;
+  background-color: #1e2329;
   font-size: 1rem;
 }
 
 div #surah-list:hover {
-  background-color: #1f242b;
+  background-color: #20252c;
   cursor: pointer;
   transition: all 0.4s;
 }
 
+.surah-left-pos {
+  display: flex;
+  align-items: center;
+  max-width: 210px;
+}
+
 #nameOfSurah {
+  margin: 0;
   font-weight: bold;
-  text-align: center;
+  text-align: left;
   text-decoration: none;
 }
 
 #translationName {
+  margin: 0;
   display: flex;
-  justify-content: center;
   align-items: center;
+  text-align: left;
   font-weight: bold;
-  text-align: center;
-  font-size: 0.75rem;
+  font-size: 0.65rem;
 }
 
 #surahInfo {
-  text-align: center;
+  padding-right: 10px;
+  justify-content: right;
+  text-align: right;
   font-weight: normal;
   font-size: 0.85rem;
 }
 
 #numberOfSurah {
-  background-color: #222229;
+  width: 60px;
+  height: 60px;
+  background-color: #1f1f24;
   padding: 15px;
   border-radius: 10px;
   color: white;
@@ -172,8 +194,21 @@ div #surah-list:hover {
   
 }
 
-.footer {
-  padding-left: 20px;
+.back-to-top {
+  position: fixed;
+  height: 70px;
+  width: 70px;
+  bottom: 20px;
+  right: 20px;
+  background: #0f8b6c;
+  color: white;
+  cursor: pointer;
+  border-radius: 100px;
+  border: none;
+}
+
+.back-to-top:hover{
+  background-color: #13c196;
 }
 
 input {
@@ -242,7 +277,6 @@ a {
 img {
   width: 40px;
   height: 40px;
-  border-radius: 50%;
   margin: 2px 5px;
 }
 
@@ -305,7 +339,7 @@ img {
 p #arab {
   font-family: "LPMQ";
   font-size: 4vh;
-  line-height: 200%;
+  line-height: 250%;
   margin-bottom: 2px;
 }
 
@@ -317,15 +351,32 @@ span .endOfAyah{
 }
 
 .versesNumber {
+  margin-right: 10px;
   background-color: #1c1c22;
-  padding: 10px;
+  padding: 12px;
   border-radius: 8px;
   font-size: 2vh;
   text-align: center;
 }
 
+.tafsir-button {
+  background-color: #1c1c22;
+  border-radius: 8px;
+  font-size: 2vh;
+}
+
+.tafsir-button:hover {
+  background-color: #13c196;
+}
+
+.tafsir {
+  line-height: 15px;
+  width: 75vw;
+  font-size: 8pt;
+}
+
 #translation {
-  line-height: 120%;
+  line-height: 150%;
   font-size: 0.8rem;
 }
 
@@ -335,8 +386,14 @@ span .endOfAyah{
 
 #arrowUp {
   position: relative;
-  top: 3px;
   filter: invert();
-  width: 40px;
-  height: 40px;
+  width: 35px;
+  height: 35px;
+  bottom: 2px;
+}
+
+#powered-by-vercel {
+  height: 20px;
+  width: 250px;
+  margin-bottom: 10px;
 }
