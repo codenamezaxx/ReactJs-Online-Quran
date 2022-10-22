@@ -1,0 +1,147 @@
+.banner {
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#alquranul-karim {
+  margin: 10px;
+  filter: invert();
+  width: 400px;
+  height: 150px;
+}
+
+.title {
+  color: whitesmoke;
+  text-decoration: none;
+}
+
+.list-container {
+  max-width: 1140px;
+}
+
+.listBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  align-content: center;
+}
+
+.bodyList {
+  max-width: 1107px;
+}
+
+#sort-by {
+  border: none;
+  border-radius: 5px;
+  width: 100px;
+  height: 40px;
+  padding: 5px;
+  color: white;
+  cursor: pointer;
+  background-color: #005043;
+}
+
+option {
+  background-color: #084939;
+}
+
+div #surah-list {
+  font-family: Arial, Helvetica, sans-serif;
+  display: inline-flex;
+  align-items: center;
+  justify-content: right;
+  border-radius: 10px;
+  min-width: 280px;
+  height: 70px;
+  width: 25vw;
+  padding: 1%;
+  background-color: #1e2329;
+  font-size: 1rem;
+}
+
+@media screen and (max-width: 992px) {
+    div #surah-list {
+        width: 40vw
+    }
+  }  
+
+div #surah-list:hover {
+  background-color: #20252c;
+  cursor: pointer;
+  transition: all 0.4s;
+}
+
+.surah-left-pos {
+  display: flex;
+  align-items: center;
+  max-width: 210px;
+}
+
+#nameOfSurah {
+  margin: 0;
+  font-weight: bold;
+  text-align: left;
+  text-decoration: none;
+}
+
+#translationName {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  text-align: left;
+  font-weight: bold;
+  font-size: 0.65rem;
+}
+
+#surahInfo {
+  padding-right: 10px;
+  justify-content: right;
+  text-align: right;
+  font-weight: normal;
+  font-size: 0.85rem;
+}
+
+#numberOfSurah {
+  width: 60px;
+  height: 60px;
+  background-color: #1f1f24;
+  padding: 15px;
+  border-radius: 10px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 16pt;
+}
+
+#surahButton {
+  margin: 5px;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+}
+
+#surahButtons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  align-content: center;
+}
+
+.searchBar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+img {
+  width: 40px;
+  height: 40px;
+  margin: 2px 5px;
+}

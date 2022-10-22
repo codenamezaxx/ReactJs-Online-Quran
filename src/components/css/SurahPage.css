@@ -1,0 +1,103 @@
+.basmalah {
+  align-items: center;
+  justify-content: center;
+  max-height: max-content;
+  border-radius: 10px;
+  margin: 1%;
+  padding: 5%;
+  padding-bottom: 2%;
+  line-height: 100%;
+  background-color: #1e2329;
+}
+
+.basmalah #arab {
+  position: relative;
+  bottom: 20px;
+  line-height: 100%;
+  font-size: 2.2rem;
+  text-align: center;
+}
+
+.basmalah #translation {
+  text-align: center;
+}
+
+.verses {
+  max-height: max-content;
+  font-size: 1.5rem;
+  border-radius: 10px;
+  margin: 1%;
+  padding: 5%;
+  padding-bottom: 2%;
+  line-height: 100%;
+  background-color: #1e2329;
+}
+
+.text {
+  font-size: 2vh;
+  margin-bottom: 5%;
+  text-align: right;
+  font-family: "LPMQ";
+}
+
+.surahName #arab {
+  margin-top: 5px;
+  font-size: 3.5em;
+  text-align: center;
+  font-family: "LPMQ";
+}
+
+.surahName #translation {
+  margin-top: 0;
+  font-size: 1.5em;
+  text-align: center;
+  font-weight: bold;
+}
+
+p #arab {
+  font-family: "LPMQ";
+  font-size: 4vh;
+  line-height: 250%;
+  margin-bottom: 2px;
+}
+
+span .endOfAyah {
+  float: left;
+  width: 12px;
+  height: 17px;
+  position: relative;
+}
+
+.versesNumber {
+  margin-right: 10px;
+  background-color: #1c1c22;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 2vh;
+  text-align: center;
+}
+
+.tafsir-button {
+  background-color: #1c1c22;
+  border-radius: 8px;
+  font-size: 2vh;
+}
+
+.tafsir-button:hover {
+  background-color: #13c196;
+}
+
+.tafsir {
+  line-height: 15px;
+  width: 75vw;
+  font-size: 8pt;
+}
+
+#translation {
+  line-height: 150%;
+  font-size: 0.8rem;
+}
+
+#idText {
+  margin-left: 5px;
+}

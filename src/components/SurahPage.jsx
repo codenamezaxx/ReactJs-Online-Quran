@@ -11,6 +11,7 @@ class SurahPage extends PureComponent {
     super(props);
 
     this.state = {
+      code: 200,
       loading: true,
       basmalah: false,
       code: null,
@@ -77,11 +78,11 @@ class SurahPage extends PureComponent {
                       {this.state.data.number + " : " + verses.number.inSurah}
                     </span>
                     <div class="tafsir-button w3-dropdown-hover w3-green">
-                      <button class="tafsir-button w3-button w3-green">Tafsir</button>
+                      <button class="tafsir-button w3-button w3-green">
+                        Tafsir
+                      </button>
                       <div class="tafsir w3-padding w3-dropdown-content w3-border w3-green w3-round">
-                        <p className="tafsir-text">
-                          {verses.tafsir.id.short}
-                        </p>
+                        <p className="tafsir-text">{verses.tafsir.id.short}</p>
                       </div>
                     </div>
                   </div>

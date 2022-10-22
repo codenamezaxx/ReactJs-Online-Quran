@@ -90,7 +90,7 @@ class SurahList extends PureComponent {
                   <option value="2">Naik</option>
                 </select>
                 <span className="listBox w3-container">
-                  <div className="bodyList w3-container w3-border w3-border-green w3-padding">
+                  <div className="bodyList w3-container w3-padding">
                     {this.state.data
                       .filter((data) => {
                         if (this.state.query === "") {
@@ -107,7 +107,7 @@ class SurahList extends PureComponent {
                         <a href={"/surah/" + data.number}>
                           <div
                             id="surah-list"
-                            className="w3-container w3-display-container w3-cell w3-mobile w3-border w3-border-green w3-margin-bottom w3-margin-right"
+                            className="w3-container w3-display-container w3-cell w3-third w3-mobile w3-border w3-border-green w3-margin-bottom w3-margin-right"
                             key={index}
                           >
                             <div className="surah-left-pos w3-display-left">
@@ -124,9 +124,9 @@ class SurahList extends PureComponent {
                               </p>
                             </div>
                             <p id="surahInfo" className="w3-display-topright">
-                              {data.numberOfVerses + " Ayat"}
+                              {data.name.short}
                               <br />
-                              {data.revelation.id}
+                              {data.numberOfVerses + " Ayat"}
                             </p>
                           </div>
                         </a>
