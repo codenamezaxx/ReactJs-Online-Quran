@@ -1,29 +1,24 @@
-import React, { PureComponent } from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import React from "react";
+import { BrowserRouter, Routes, Route, useParams } from "react-router-dom";
 import SurahList from "./SurahList";
 import SurahPage from "./SurahPage";
 import ErrorPage from "./ErrorPage";
 
-const pathname = window.location.pathname;
+const SurahPageWrapper = () => {
+  const { surahNumber } = useParams();
+  return <SurahPage surahNumber={surahNumber} />;
+};
 
-class WebRouter extends PureComponent {
-  render() {
-    return (
-      <div>
-        <BrowserRouter>
-          <Routes>
-            <Route exact path="/" element={<SurahList />} />
-            <Route
-              exact
-              path={"/surah/:surahNumber"}
-              element={<SurahPage surahNumber={pathname}/>}
-            />
-            <Route path="*" element={<ErrorPage />}/>
-          </Routes>
-        </BrowserRouter>
-      </div>
-    );
-  }
-}
+const WebRouter = () => {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<SurahList />} />
+        <Route path="/surah/:surahNumber" element={<SurahPageWrapper />} />
+        <Route path="*" element={<ErrorPage />} />
+      </Routes>
+    </BrowserRouter>
+  );
+};
 
 export default WebRouter;
