@@ -4,8 +4,7 @@ import banner from "./svg/alquranul-karim.svg";
 import Loading from "./Loading";
 import Header from "./Header";
 import Footer from "./Footer";
-
-const api = "https://react-quran-api.vercel.app";
+import { API_BASE_URL } from "../api/config";
 
 class SurahList extends PureComponent {
   constructor(props) {
@@ -21,7 +20,7 @@ class SurahList extends PureComponent {
   }
 
   componentDidMount() {
-    axios.get(api + "/surah").then((res) => {
+    axios.get(API_BASE_URL + "/surah").then((res) => {
       this.setState({
         data: res.data.data,
         loadApi: false,
@@ -79,7 +78,7 @@ class SurahList extends PureComponent {
             <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
               <div className="text-white text-center md:text-left">
                 <h2 className="text-4xl md:text-5xl font-bold mb-4">Al-Quranul Karim</h2>
-                <p className="text-teal-50 opacity-90 text-lg max-w-md">
+                <p className="text-teal-50 opacity-90 text-md md:text-lg max-w-md">
                   Bacalah Al-Quran setiap hari untuk menenangkan hati dan pikiran.
                 </p>
               </div>

@@ -16,10 +16,10 @@ const Footer = () => {
           <div className="flex items-center gap-2 text-sm text-gray-500 mb-8">
             <span>Made with ❤️ by</span>
             <a 
-              href="https://lynk.id/codenamezaxx" 
+              href="https://codenamezaxx.my.id" 
               className="font-medium text-teal-600 hover:text-teal-500 transition-colors"
             >
-              Zaxx
+              codenamezaxx
             </a>
             <span>© 2022 - {new Date().getFullYear()}</span>
           </div>
